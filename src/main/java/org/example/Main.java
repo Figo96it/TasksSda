@@ -18,6 +18,17 @@ public class Main {
         map.put("JavaScript", 2);
 
         printElements(map);
+
+        Map<String, List<String>> mapa = new HashMap<>();
+
+        mapa.put("Klucz1", new ArrayList<>(List.of("1", "2", "3")));
+        mapa.put("Klucz2", new ArrayList<>(List.of("4", "5")));
+        mapa.put("Klucz3", new ArrayList<>(List.of("6")));
+        Storage storage = new Storage(mapa);
+
+        storage.addToStorage("Klucz1", "4");
+        storage.printValues("Klucz1");
+        storage.findValues("4");
     }
 
 
@@ -37,7 +48,7 @@ public class Main {
     public static void printElements(Map<?, ?> map) {
         String result = map.entrySet().stream()
                 .map(entry -> "Klucz: " + entry.getKey() + ", Wartość: " + entry.getValue())
-                .collect(Collectors.joining(",\n","","."));
+                .collect(Collectors.joining(",\n", "", "."));
         System.out.println(result);
     }
 
