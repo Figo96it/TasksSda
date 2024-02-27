@@ -4,12 +4,12 @@ import java.util.*;
 
 public class SDAHashSet<E> extends AbstractSet<E> {
 
-    private static final Object DUMMY = new Object();
+    private static final Object object = new Object();
 
-    private HashMap<E, Object> set;
+    private LinkedHashMap<E, Object> set;
 
     public SDAHashSet() {
-        set = new HashMap<>();
+        set = new LinkedHashMap<>();
     }
 
     @Override
@@ -29,12 +29,12 @@ public class SDAHashSet<E> extends AbstractSet<E> {
 
     @Override
     public boolean add(E e){
-        return set.put(e, DUMMY) == null;
+        return set.put(e, object) == null;
     }
 
     @Override
     public boolean remove(Object o){
-        return set.remove(o) == DUMMY;
+        return set.remove(o) == object;
     }
 
     @Override
