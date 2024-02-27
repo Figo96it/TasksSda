@@ -48,6 +48,7 @@ public class Main {
         set.clear();
         System.out.println("Size after clear: " + set.size());
 
+        System.out.println();
         //Exercise 6
         TreeMap<Integer, String> treeMap = new TreeMap<>();
         treeMap.put(3, "Trzy");
@@ -58,6 +59,23 @@ public class Main {
         System.out.println(treeMap);
 
         printFirstAndLastEntrySet(treeMap);
+
+        System.out.println();
+        //Exercise 7
+        FirearmMagazine magazine = new FirearmMagazine(3);
+
+        magazine.loadBullet("1");
+        magazine.loadBullet("2");
+        magazine.loadBullet("3");
+
+        System.out.println("Is loaded: " + magazine.isLoaded());
+
+        magazine.shot();
+        magazine.shot();
+        magazine.shot();
+        magazine.shot();
+
+        System.out.println("Is loaded: " + magazine.isLoaded());
     }
 
     //Exercise 6
