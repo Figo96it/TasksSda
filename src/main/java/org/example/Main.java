@@ -47,6 +47,23 @@ public class Main {
 
         set.clear();
         System.out.println("Size after clear: " + set.size());
+
+        //Exercise 6
+        TreeMap<Integer, String> treeMap = new TreeMap<>();
+        treeMap.put(3, "Trzy");
+        treeMap.put(1, "Jeden");
+        treeMap.put(2, "Dwa");
+        treeMap.put(4, "Cztery");
+
+        System.out.println(treeMap);
+
+        printFirstAndLastEntrySet(treeMap);
+    }
+
+    //Exercise 6
+    private static void printFirstAndLastEntrySet(TreeMap<Integer, String> treeMap) {
+        System.out.println("FirstSet: " + treeMap.firstEntry());
+        System.out.println("LastSet: " + treeMap.lastEntry());
     }
 
 
