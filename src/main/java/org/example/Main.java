@@ -7,28 +7,46 @@ import java.util.stream.Collectors;
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
+        //Exercise 1
         List<String> stringList = List.of("Zorro", "adam", "Java", "komputer", "Telefon");
         System.out.println(sortedList(stringList));
+        //Exercise 2
         System.out.println(sortedListCaseInsensitiveOrder(stringList));
 
+        //Exercise 3
         Map<String, Integer> map = new HashMap<>();
         map.put("Java", 20);
         map.put("Python", 15);
         map.put("C++", 10);
         map.put("JavaScript", 2);
-
         printElements(map);
 
+        //Exercise 4
         Map<String, List<String>> mapa = new HashMap<>();
-
         mapa.put("Klucz1", new ArrayList<>(List.of("1", "2", "3")));
         mapa.put("Klucz2", new ArrayList<>(List.of("4", "5")));
         mapa.put("Klucz3", new ArrayList<>(List.of("6")));
-        Storage storage = new Storage(mapa);
-
+        Storage<String, String> storage = new Storage<>(mapa);
         storage.addToStorage("Klucz1", "4");
         storage.printValues("Klucz1");
         storage.findValues("4");
+
+        System.out.println();
+
+        //Exercise5
+        SDAHashSet<String> set = new SDAHashSet<>();
+        set.add("Java");
+        set.add("Python");
+        set.add("C++");
+
+        System.out.println("Size: " + set.size());
+        System.out.println("Contains 'Java': " + set.contains("Java"));
+
+        set.remove("Python");
+        System.out.println("Size after removal: " + set.size());
+
+        set.clear();
+        System.out.println("Size after clear: " + set.size());
     }
 
 
