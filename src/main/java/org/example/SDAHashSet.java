@@ -2,6 +2,8 @@ package org.example;
 
 import java.util.*;
 
+
+//Exercise 5
 public class SDAHashSet<E> extends AbstractSet<E> {
 
     private static final Object object = new Object();

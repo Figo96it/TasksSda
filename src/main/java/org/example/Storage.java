@@ -15,7 +15,7 @@ public class Storage<K, V> {
     }
 
     public void addToStorage(K key, V value) {
-        map.computeIfAbsent(key, K -> new ArrayList<>()).add(value);
+        map.computeIfAbsent(key, k -> new ArrayList<>()).add(value);
     }
 
     public void printValues(K key) {
@@ -32,11 +32,4 @@ public class Storage<K, V> {
                 .collect(Collectors.joining(",\n", "", ".")));
     }
 
-    public Map<K, List<V>> getMap() {
-        return map;
-    }
-
-    public void setMap(Map<K, List<V>> map) {
-        this.map = map;
-    }
 }
