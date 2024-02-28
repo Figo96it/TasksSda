@@ -1,20 +1,14 @@
 package org.example;
 
-//Exercise 9
-public class Point2D implements Movable {
+//Exercise 10
+public class MoveDirection {
 
     private double x;
     private double y;
 
-    public Point2D(double x, double y) {
+    public MoveDirection(double x, double y) {
         this.x = x;
         this.y = y;
-    }
-
-    @Override
-    public void move(MoveDirection moveDirection) {
-        setX(getX() + moveDirection.getX());
-        setY(getY() + moveDirection.getY());
     }
 
     public double getX() {

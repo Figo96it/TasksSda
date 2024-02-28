@@ -40,7 +40,7 @@ public class FirearmMagazine {
             if (loadedBullets > 0) {
                 System.out.println("Next bullet: " + bullets[loadedBullets - 1]);
             } else {
-                System.out.println("Empty magazine");
+                throw new IllegalArgumentException("Empty magazine");
             }
         } else {
             throw new IllegalArgumentException("Empty magazine");

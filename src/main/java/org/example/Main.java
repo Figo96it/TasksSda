@@ -62,6 +62,7 @@ public class Main {
 
         System.out.println();
         //Exercise 7
+        System.out.println();
         FirearmMagazine magazine = new FirearmMagazine(3);
 
         magazine.loadBullet("1");
@@ -72,8 +73,11 @@ public class Main {
 
         magazine.shot();
         magazine.shot();
-        magazine.shot();
-        magazine.shot();
+        try {
+            magazine.shot();
+        }catch (IllegalArgumentException e){
+            System.out.println("Magazynek jest pusty.");
+        }
 
         System.out.println("Is loaded: " + magazine.isLoaded());
     }

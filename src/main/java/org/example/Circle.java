@@ -1,7 +1,7 @@
 package org.example;
 
 //Exercise 9
-public class Circle {
+public class Circle implements Movable {
 
     private Point2D center;
     private Point2D point;
@@ -24,5 +24,19 @@ public class Circle {
 
     public double getArea() {
         return 2 * Math.PI * Math.pow(getRadius(), 2);
+    }
+
+    @Override
+    public void move(MoveDirection moveDirection) {
+        setCenter(new Point2D(center.getX() + moveDirection.getX(), center.getY() + moveDirection.getY()));
+        setPoint(new Point2D(point.getX() + moveDirection.getX(), point.getY() + moveDirection.getY()));
+    }
+
+    public void setCenter(Point2D center) {
+        this.center = center;
+    }
+
+    public void setPoint(Point2D point) {
+        this.point = point;
     }
 }
