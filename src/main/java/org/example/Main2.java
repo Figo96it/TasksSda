@@ -15,26 +15,32 @@ public class Main2 {
         System.out.println(validator.validate(parcel3));
         System.out.println();
 
-        //Exercise 9
+        //Exercise 9,10,11
         Point2D center = new Point2D(2.3, 6.7);
         Point2D point = new Point2D(7.1, 8.4);
         Circle circle = new Circle(center, point);
         System.out.println("Radius: " + circle.getRadius());
         System.out.println("Perimeter: " + circle.getPerimeter());
-        System.out.println("Area: " + circle.getArea());
+        System.out.println("Area: " + circle.getArea() + "\n");
 
-        MoveDirection moveDirection = new MoveDirection(2,3);
+        MoveDirection moveDirection = new MoveDirection(2, 3);
         center.move(moveDirection);
         System.out.println("After move direction.");
         System.out.println("Radius: " + circle.getRadius());
         System.out.println("Perimeter: " + circle.getPerimeter());
-        System.out.println("Area: " + circle.getArea());
+        System.out.println("Area: " + circle.getArea() + "\n");
 
         circle.move(moveDirection);
         System.out.println("After second move direction.");
         System.out.println("Radius: " + circle.getRadius());
         System.out.println("Perimeter: " + circle.getPerimeter());
-        System.out.println("Area: " + circle.getArea());
+        System.out.println("Area: " + circle.getArea() + "\n");
 
+        //Exercise 11
+        circle.resize(1.5);
+        System.out.println("After resizable.");
+        System.out.println("Radius: " + circle.getRadius());
+        System.out.println("Perimeter: " + circle.getPerimeter());
+        System.out.println("Area: " + circle.getArea());
     }
 }
