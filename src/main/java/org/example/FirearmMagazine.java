@@ -43,7 +43,7 @@ public class FirearmMagazine {
                 System.out.println("Empty magazine");
             }
         } else {
-            System.out.println("Empty magazine");
+            throw new IllegalArgumentException("Empty magazine");
         }
     }
 }
