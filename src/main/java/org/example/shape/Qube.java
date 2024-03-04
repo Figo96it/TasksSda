@@ -4,9 +4,17 @@ public class Qube extends ThreeDShape {
 
     private double a;
 
+    private double volume;
+
+    public Qube(double a) {
+        this.a = a;
+        this.area = calculateArea();
+        this.volume = calculateVolume();
+    }
+
     @Override
     public double calculatePerimeter() {
-        return 0;
+        throw new RuntimeException();
     }
 
     @Override
@@ -23,6 +31,7 @@ public class Qube extends ThreeDShape {
     public String toString() {
         return "Qube{" +
                 "a=" + a +
+                ", volume=" + volume +
                 ", perimeter=" + perimeter +
                 ", area=" + area +
                 '}';

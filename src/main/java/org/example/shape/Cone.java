@@ -6,11 +6,14 @@ public class Cone extends ThreeDShape {
 
     private double height;
     private double creatingCone;
+    private double volume;
 
     public Cone(double radius, double height, double creatingCone) {
         this.radius = radius;
         this.height = height;
         this.creatingCone = creatingCone;
+        this.area = calculateArea();
+        this.volume = calculateVolume();
     }
 
     @Override
@@ -20,7 +23,7 @@ public class Cone extends ThreeDShape {
 
     @Override
     public double calculatePerimeter() {
-        return 0;
+        throw new RuntimeException();
     }
 
     @Override
@@ -34,6 +37,7 @@ public class Cone extends ThreeDShape {
                 "radius=" + radius +
                 ", height=" + height +
                 ", creatingCone=" + creatingCone +
+                ", volume=" + volume +
                 ", perimeter=" + perimeter +
                 ", area=" + area +
                 '}';
