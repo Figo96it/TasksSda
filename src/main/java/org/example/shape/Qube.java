@@ -1,29 +1,27 @@
 package org.example.shape;
 
-//Exercise 20
-public class Hexagon extends Shape {
+public class Qube extends ThreeDShape {
 
     private double a;
 
-    public Hexagon(double a) {
-        this.a = a;
-        this.perimeter = calculatePerimeter();
-        this.area = calculateArea();
-    }
-
     @Override
     public double calculatePerimeter() {
-        return 6 * a;
+        return 0;
     }
 
     @Override
     public double calculateArea() {
-        return 6 * (Math.pow(a, 2) * Math.sqrt(3)) / 4;
+        return 6 * Math.pow(a, 2);
+    }
+
+    @Override
+    public double calculateVolume() {
+        return Math.pow(a, 3);
     }
 
     @Override
     public String toString() {
-        return "Hexagon{" +
+        return "Qube{" +
                 "a=" + a +
                 ", perimeter=" + perimeter +
                 ", area=" + area +

@@ -12,6 +12,5 @@ public class MeasurementConverter {
         System.out.println(metersToYards);
         double inchesToCentimeters = convert(value, ConversionType.INCHES_TO_CENTIMETERS);
         System.out.println(inchesToCentimeters);
-
     }
 }

@@ -1,5 +1,6 @@
 package org.example.shape;
 
+//Exercise 20
 public class Rectangle extends Shape{
 
     private double a;

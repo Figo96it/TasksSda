@@ -17,7 +17,7 @@ public class Main4 {
         Runner[] runner = Runner.values();
         System.out.println(Runner.getFitnessLevel(230));
 
-        //Exercise 18
+        //Exercise 20
         Shape shape = new Hexagon(12);
         System.out.println(shape);
         Rectangle rectangle = new Rectangle(6,2);
