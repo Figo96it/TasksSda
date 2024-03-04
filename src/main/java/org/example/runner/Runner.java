@@ -2,11 +2,12 @@ package org.example.runner;
 
 import java.util.Arrays;
 
+//Exercise 16
 public enum Runner {
 
-    BEGINNER(300,360),
-    INTERMEDIATE(180,300),
-    ADVANCED(0,180);
+    BEGINNER(300, 360),
+    INTERMEDIATE(180, 300),
+    ADVANCED(0, 180);
 
     private final int minTime;
     private final int maxTime;
@@ -24,7 +25,10 @@ public enum Runner {
         return maxTime;
     }
 
-    public static Runner getFitnessLevel(int marathonTime){
-        return Arrays.stream(Runner.values()).filter(runner -> marathonTime >= runner.getMinTime() && marathonTime <= runner.getMaxTime()).findFirst().orElseThrow(() -> new IllegalArgumentException("Invalid marathon time"));
+    public static Runner getFitnessLevel(int marathonTime) {
+        return Arrays
+                .stream(Runner.values())
+                .filter(runner -> marathonTime >= runner.getMinTime() && marathonTime <= runner.getMaxTime()).findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("Invalid marathon time"));
     }
 }
