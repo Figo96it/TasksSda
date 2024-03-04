@@ -1,4 +1,9 @@
-package org.example;
+package org.example.mains;
+
+import org.example.car.Car;
+import org.example.car.CarService;
+import org.example.car.EngineType;
+import org.example.manufacturer.Manufacturer;
 
 import java.math.BigDecimal;
 import java.time.Year;

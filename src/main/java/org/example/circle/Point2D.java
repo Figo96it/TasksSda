@@ -1,4 +1,4 @@
-package org.example;
+package org.example.circle;
 
 //Exercise 9
 public class Point2D implements Movable {

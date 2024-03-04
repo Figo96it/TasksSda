@@ -1,4 +1,8 @@
-package org.example;
+package org.example.mains;
+
+import org.example.FirearmMagazine;
+import org.example.SDAHashSet;
+import org.example.Storage;
 
 import java.util.*;
 import java.util.stream.Collectors;

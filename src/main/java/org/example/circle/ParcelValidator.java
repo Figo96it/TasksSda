@@ -1,4 +1,6 @@
-package org.example;
+package org.example.circle;
+
+import org.example.Validator;
 
 //Exercise 8
 public class ParcelValidator implements Validator {

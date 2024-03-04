@@ -1,4 +1,4 @@
-package org.example;
+package org.example.car;
 
 //Exercise 12
 public enum EngineType {

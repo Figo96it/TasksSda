@@ -1,4 +1,4 @@
-package org.example;
+package org.example.circle;
 
 //Exercise 10
 public class MoveDirection {

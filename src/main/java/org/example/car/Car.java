@@ -1,4 +1,6 @@
-package org.example;
+package org.example.car;
+
+import org.example.manufacturer.Manufacturer;
 
 import java.math.BigDecimal;
 import java.time.Year;
