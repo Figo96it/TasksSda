@@ -56,8 +56,6 @@ public class Main3 {
         Manufacturer manufacturer4 = new Manufacturer("Audi Germany", Year.of(1920), "Germany");
 
         List<Manufacturer> manufacturerList = new ArrayList<>(List.of(manufacturer1,manufacturer2,manufacturer3,manufacturer4));
-
-
         return new Car(brand, model,price, Year.of(year),manufacturerList, EngineType.valueOf(engineType));
     }
 
@@ -65,7 +63,6 @@ public class Main3 {
         return new Random().nextInt(max - min + 1) + min;
     }
 
-    // Generowanie losowej liczby zmiennoprzecinkowej
     private static double getRandomDouble(double min, double max) {
         return Math.random() * (max - min) + min;
     }

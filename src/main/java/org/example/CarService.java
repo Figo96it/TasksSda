@@ -50,18 +50,16 @@ public class CarService {
         return carList.stream().filter(c -> c.getListOfProducers().size() >= 3).toList();
     }
 
-    public List<Car> getSortedCarsList(String parameter) {
-        if (parameter.equals("rosnaco")) {
+    public List<Car> getSortedCarsList(boolean flag) {
+        if (Boolean.TRUE.equals(flag)) {
             return carList.stream().sorted().toList();
-        } else if (parameter.equals("malejaco")) {
+        } else {
             return carList.stream()
                     .sorted(Comparator.comparing(Car::getModel)
                             .thenComparing(Car::getName)
                             .thenComparing(Car::getEngineType)
                             .thenComparing(Car::getPrice))
                     .toList();
-        } else {
-            throw new IllegalArgumentException("Parameter is incorrect");
         }
     }
 
@@ -73,28 +71,27 @@ public class CarService {
         return carList.stream().filter(c -> c.getListOfProducers().toString().contains(producer)).toList();
     }
 
-    public List<Car> getCarsByProducerGreaterThanInputValue(String producer, Year year){
-        return carList.stream().filter(c -> c.getListOfProducers().toString().contains(producer) && c.getYearOfProduction().isAfter(year)).toList();
+    public List<Car> getCarsByManufacturerAndFoundationYear(String producer, String comparisonOperator, Year inputYear){
+        return carList.stream().filter(c -> c.getListOfProducers().toString().contains(producer) && compareYears(comparisonOperator, inputYear, c.getYearOfProduction())).toList();
     }
 
-    public List<Car> getCarsByProducerLessThanInputValue(String producer, Year year){
-        return carList.stream().filter(c -> c.getListOfProducers().toString().contains(producer) && c.getYearOfProduction().isBefore(year)).toList();
-    }
-
-    public List<Car> getCarsByProducerGreaterThanInputValueOrEqual(String producer, Year year){
-        return carList.stream().filter(c -> c.getListOfProducers().toString().contains(producer) && !c.getYearOfProduction().isBefore(year)).toList();
-    }
-
-    public List<Car> getCarsByProducerLessThanInputValueOrEqual(String producer, Year year){
-        return carList.stream().filter(c -> c.getListOfProducers().toString().contains(producer) && !c.getYearOfProduction().isAfter(year)).toList();
-    }
-
-    public List<Car> getCarsByProducerIsEqualToInputValue(String producer, Year year){
-        return carList.stream().filter(c -> c.getListOfProducers().toString().contains(producer) && c.getYearOfProduction().equals(year)).toList();
-    }
-
-    public List<Car> getCarsByProducerIsNotEqualToInputValue(String producer, Year year){
-        return carList.stream().filter(c -> c.getListOfProducers().toString().contains(producer) && !c.getYearOfProduction().equals(year)).toList();
+    private boolean compareYears(String comparisonOperator, Year inputYear, Year yearOfProduction) {
+        switch (comparisonOperator) {
+            case "<":
+                return yearOfProduction.isBefore(inputYear);
+            case ">":
+                return yearOfProduction.isAfter(inputYear);
+            case "<=":
+                return !yearOfProduction.isAfter(inputYear);
+            case ">=":
+                return !yearOfProduction.isBefore(inputYear);
+            case "=":
+                return yearOfProduction.equals(inputYear);
+            case "!=":
+                return !yearOfProduction.equals(inputYear);
+            default:
+                throw new IllegalArgumentException("Invalid comparison operator");
+        }
     }
 
 }
