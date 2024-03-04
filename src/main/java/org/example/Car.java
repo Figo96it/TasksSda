@@ -37,4 +37,28 @@ public class Car {
     public int hashCode() {
         return Objects.hash(name, model, price, yearOfProduction, listOfProducers, engineType);
     }
+
+    public EngineType getEngineType() {
+        return engineType;
+    }
+
+    public Year getYearOfProduction() {
+        return yearOfProduction;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public List<Manufacturer> getListOfProducers() {
+        return listOfProducers;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getModel() {
+        return model;
+    }
 }

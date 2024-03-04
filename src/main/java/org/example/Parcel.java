@@ -7,7 +7,7 @@ public class Parcel {
     private int yLength;
     private int zLength;
     private float weight;
-    private boolean isExpress;
+    private Boolean isExpress;
 
     public Parcel(int xLength, int yLength, int zLength, float weight, boolean isExpress) {
         this.xLength = xLength;
@@ -33,7 +33,7 @@ public class Parcel {
         return weight;
     }
 
-    public boolean isExpress() {
+    public Boolean isExpress() {
         return isExpress;
     }
 }

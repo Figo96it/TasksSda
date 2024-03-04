@@ -1,5 +1,8 @@
 package org.example;
 
+import java.util.ArrayList;
+import java.util.List;
+
 //Exercise 9
 public class Circle implements Movable, Resizable {
 
@@ -13,7 +16,7 @@ public class Circle implements Movable, Resizable {
         if (center.equals(point)) {
             throw new IllegalArgumentException("Radius is 0");
         }
-        this.radius = Math.sqrt(Math.pow(point.getX() - center.getX(), 2) + Math.pow(point.getY() - center.getY(), 2));
+        this.radius = getRadius();
     }
 
     public double getPerimeter() {
@@ -24,10 +27,25 @@ public class Circle implements Movable, Resizable {
         return 2 * Math.PI * Math.pow(getRadius(), 2);
     }
 
+    public List<Point2D> getSlicePoints() {
+        List<Point2D> points = new ArrayList<>();
+        double x = 0;
+        double y = 0;
+
+        for (double angle = 90.0, i = 0; i < 3; i++, angle += 90) {
+            System.out.println(angle);
+            x = point.getX() + getRadius() * Math.cos(angle);
+            y = point.getY() + getRadius() * Math.sin(angle);
+            points.add(new Point2D(x, y));
+        }
+
+        return points;
+    }
+
     @Override
     public void move(MoveDirection moveDirection) {
-        setCenter(new Point2D(center.getX() + moveDirection.getX(), center.getY() + moveDirection.getY()));
-        setPoint(new Point2D(point.getX() + moveDirection.getX(), point.getY() + moveDirection.getY()));
+        this.center.move(moveDirection);
+        this.point.move(moveDirection);
     }
 
     @Override
@@ -44,6 +62,16 @@ public class Circle implements Movable, Resizable {
     }
 
     public double getRadius() {
-        return radius;
+        return Math.sqrt(Math.pow(point.getX() - center.getX(), 2) + Math.pow(point.getY() - center.getY(), 2));
+    }
+
+    @Override
+    public String toString() {
+        this.radius = getRadius();
+        return "Circle{" +
+                "center=" + center +
+                ", point=" + point +
+                ", radius=" + radius +
+                '}';
     }
 }
